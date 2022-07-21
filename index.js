@@ -1,4 +1,6 @@
 const inquirer = require("inquirer");
+const Employee = require("./lib/employee");
+const Engineer = require("./lib/engineer");
 
 const managerQuestion = () => {
     inquirer
@@ -78,6 +80,9 @@ const getEngineer = () => {
             }
     ])
     .then((response) => {
+        const { engineerName, engineerId, engineerEmail, engineerGithub } = response;
+        const engCreated = new Engineer(engineerName, engineerId, engineerEmail, engineerGithub)
+        console.log(engCreated) 
         if (response.list === "Engineer") {
             getEngineer()
         } else if (response.list === "Intern") {
