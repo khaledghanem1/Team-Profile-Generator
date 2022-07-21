@@ -4,52 +4,30 @@ inquirer
     .prompt([
         {
             type:"input",
-            message: "Whats the Managers Name?",
+            message: "Whats the Manager's Name?",
             name: "manager",
         },
         {
             type:"input",
-            message: "Whats the Managers employee ID?",
+            message: "Whats the Manager's employee ID?",
             name: "managerID",
         },
         {
             type:"input",
-            message: "Whats the Managers email address?",
+            message: "Whats the Manager's email address?",
             name: "managerEmail",
         },
         {
-            type:"input",
-            message: "Whats the Managers office number?",
-            name: "managerNumber",
-        },
-        {
-            type:"input",
-            message: "Whats the Managers office number?",
-            name: "managerNumber",
-        },
-        {
-            type:"input",
-            message: "Whats the Managers office number?",
-            name: "managerNumber",
-        },
-        {
-            type:"input",
-            message: "Whats the Engineers name ?",
-            name: "engineerName",
-        },
-        {
-            type:"input",
-            message: "Whats the Engineers ID ?",
-            name: "engineerId",
-        },
-        {
-            type:"input",
-            message: "Whats the Engineers email?",
-            name: "engineerEmail",
-        },
-        {
-            type:"input",
-            message: "Whats the Engineers Github?",
-            name: "engineerGithub",
-        },
+            type: "list",
+            message: "Choose whether you would like to add an engineer or an intern",
+            name: "list",
+            choices: [
+              "Engineer",
+              "Intern",
+            ],
+          },  
     ])
+    .then((response) => { 
+        console.log(response) 
+        if (response.choices = "Engineer")
+    });
